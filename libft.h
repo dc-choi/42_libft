@@ -17,10 +17,13 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+void	*ft_memset(void *dest, int i, size_t n);
+
 int		ft_isalpha(int i);
 int		ft_isdigit(int i);
 int		ft_isalnum(int i);
 int		ft_isascii(int i);
 int		ft_isprint(int i);
+int		ft_strlen(const char *str);
 
 #endif
