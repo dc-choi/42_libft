@@ -6,7 +6,7 @@
 /*   By: donchoi <donchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 11:35:59 by donchoi           #+#    #+#             */
-/*   Updated: 2021/11/29 11:35:59 by donchoi          ###   ########.fr       */
+/*   Updated: 2021/12/14 16:02:28 by donchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,6 @@ void	ft_bzero(void *d, size_t n)
 
 	dest = d;
 	i = 0;
-	while (i < n)
-	{
-		*dest = 0;
-		*dest++;
-		i++;
-	}
-	return (d);
+	while (i++ < n)
+		*dest++ = 0;
 }

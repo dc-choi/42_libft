@@ -6,7 +6,7 @@
 /*   By: donchoi <donchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 17:31:51 by donchoi           #+#    #+#             */
-/*   Updated: 2021/12/13 17:31:51 by donchoi          ###   ########.fr       */
+/*   Updated: 2021/12/14 16:07:59 by donchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ char	*ft_strrchr(const char *str, int i)
 	char	find;
 	size_t	idx;
 
-	last = (unsigned char *)str;
-	find = (unsigned char)i;
+	last = (char *)str;
+	find = (char)i;
 	idx = 0;
 	while (str[idx] != '\0')
 		idx++;

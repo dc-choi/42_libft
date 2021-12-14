@@ -6,7 +6,7 @@
 /*   By: donchoi <donchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 13:26:10 by donchoi           #+#    #+#             */
-/*   Updated: 2021/12/14 15:50:01 by donchoi          ###   ########.fr       */
+/*   Updated: 2021/12/14 16:06:31 by donchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	else
 	{
-		new_dest = dest + (n - 1);
-		new_src = src + (n - 1);
+		new_dest = (unsigned char *)dest + (n - 1);
+		new_src = (unsigned char *)src + (n - 1);
 		while (n--)
 			*new_dest-- = *new_src--;
 	}

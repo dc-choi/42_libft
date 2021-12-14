@@ -6,7 +6,7 @@
 /*   By: donchoi <donchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:12:27 by donchoi           #+#    #+#             */
-/*   Updated: 2021/11/23 16:12:27 by donchoi          ###   ########.fr       */
+/*   Updated: 2021/12/14 16:03:33 by donchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,7 @@ void	*ft_memset(void *dest, int c, size_t n)
 	new_dest = dest;
 	src = c;
 	i = 0;
-	while (i < n)
-	{
-		*new_dest = src;
-		*new_dest++;
-		i++;
-	}
+	while (i++ < n)
+		*new_dest++ = src;
 	return (dest);
 }
