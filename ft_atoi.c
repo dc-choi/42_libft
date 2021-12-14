@@ -6,7 +6,7 @@
 /*   By: donchoi <donchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:48:24 by donchoi           #+#    #+#             */
-/*   Updated: 2021/12/14 14:48:24 by donchoi          ###   ########.fr       */
+/*   Updated: 2021/12/14 15:52:26 by donchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_isspace(char c)
 {
-	if (c == ' ' || c == '\n' || c == '\t' ||
-		c == '\v' || c == '\f' || c == '\r')
+	if (c == ' ' || c == '\n' || c == '\t'
+		|| c == '\v' || c == '\f' || c == '\r')
 		return (1);
 	else
 		return (0);
@@ -23,9 +23,9 @@ int	ft_isspace(char c)
 
 int	ft_atoi(const char *str)
 {
-	int nbr;
-	int sign;
-	size_t idx;
+	int		nbr;
+	int		sign;
+	size_t	idx;
 
 	nbr = 0;
 	sign = 1;

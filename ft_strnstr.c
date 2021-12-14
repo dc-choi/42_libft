@@ -6,7 +6,7 @@
 /*   By: donchoi <donchoi@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 13:25:18 by donchoi           #+#    #+#             */
-/*   Updated: 2021/12/14 13:25:18 by donchoi          ###   ########.fr       */
+/*   Updated: 2021/12/14 15:56:51 by donchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t n)
 	l_len = ft_strlen(little);
 	if (b_len < l_len || n < l_len)
 		return (0);
-	size = b_len > n ? n : b_len;
+	if (b_len > n)
+		size = n;
+	else
+		size = b_len;
 	while (size >= l_len)
 	{
 		if (ft_memcmp(big, little, l_len) == 0)
