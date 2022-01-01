@@ -26,6 +26,6 @@ char	*ft_strchr(const char *str, int i)
 		idx++;
 	}
 	if (str[idx] == find)
-			return ((char *)str + idx);
+		return ((char *)str + idx);
 	return (0);
 }
