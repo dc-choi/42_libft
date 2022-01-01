@@ -23,9 +23,9 @@ static int	ft_isspace(char c)
 
 int	ft_atoi(const char *str)
 {
-	int		nbr;
-	int		sign;
-	size_t	idx;
+	long		nbr;
+	long		sign;
+	size_t		idx;
 
 	nbr = 0;
 	sign = 1;
@@ -41,7 +41,7 @@ int	ft_atoi(const char *str)
 		nbr = (nbr * 10) + (str[idx] - '0');
 		if (nbr > 2147483647 && sign == 1)
 			return (-1);
-		if (nbr > 2147383648 && sign == -1)
+		if (nbr > 2147483648 && sign == -1)
 			return (0);
 		idx++;
 	}
