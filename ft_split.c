@@ -12,91 +12,90 @@
 
 #include "libft.h"
 
-static char	**ft_malloc_error(char **tab)
+static int	count_words(char const *str, char c)
 {
-	unsigned int	i;
+	int	cnt;
+	int	i;
 
 	i = 0;
-	while (tab[i])
+	cnt = 0;
+	while (str[i] != '\0')
 	{
-		free(tab[i]);
-		i++;
+		while (str[i] == c)
+			i++;
+		if (str[i] == '\0')
+			break ;
+		while (str[i] != '\0' && str[i] != c)
+			i++;
+		cnt++;
 	}
-	free(tab);
-	return (NULL);
+	return (cnt);
 }
 
-static unsigned int	ft_get_nb_strs(char const *s, char c)
+static char	*split_each(char const *str, int len)
 {
-	unsigned int	i;
-	unsigned int	nb_strs;
+	char	*word;
+	int		i;
 
-	if (!s[0])
+	i = 0;
+	word = (char *) malloc(sizeof(char) * (len + 1));
+	if (word == 0)
 		return (0);
-	i = 0;
-	nb_strs = 0;
-	while (s[i] && s[i] == c)
-		i++;
-	while (s[i])
+	while (i < len)
 	{
-		if (s[i] == c)
-		{
-			nb_strs++;
-			while (s[i] && s[i] == c)
-				i++;
-			continue ;
-		}
+		word[i] = str[i];
 		i++;
 	}
-	if (s[i - 1] != c)
-		nb_strs++;
-	return (nb_strs);
+	word[i] = '\0';
+	return (word);
 }
 
-static void	ft_get_next_str(char **next_str, unsigned int *next_str_len,
-					char c)
+static int	free_words(char **words, int len)
 {
-	unsigned int	i;
+	int	i;
 
-	*next_str += *next_str_len;
-	*next_str_len = 0;
 	i = 0;
-	while (**next_str && **next_str == c)
-		(*next_str)++;
-	while ((*next_str)[i])
+	while (i < len)
+		free(words[i++]);
+	free(words);
+	return (0);
+}
+
+static void	ft_split_behave(char const *s, char c, char **words)
+{
+	int	start;
+	int	i;
+	int	word_i;
+
+	i = 0;
+	word_i = 0;
+	while (s[i] != '\0')
 	{
-		if ((*next_str)[i] == c)
+		while (s[i] == c)
+			i++;
+		if (s[i] == '\0')
+			break ;
+		start = i;
+		while (s[i] != c && s[i] != '\0')
+			i++;
+		words[word_i] = split_each(s + start, i - start);
+		if (words[word_i] == 0)
+		{
+			free_words(words, word_i);
 			return ;
-		(*next_str_len)++;
-		i++;
+		}
+		word_i++;
 	}
+	words[word_i] = 0;
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char			**tab;
-	char			*next_str;
-	unsigned int	next_str_len;
-	unsigned int	nb_strs;
-	unsigned int	i;
+	char	**words;
 
-	if (!(s))
-		return (NULL);
-	nb_strs = ft_get_nb_strs(s, c);
-	tab = malloc(sizeof(char *) * (nb_strs + 1));
-	if (!(tab))
-		return (NULL);
-	i = 0;
-	next_str = (char *)s;
-	next_str_len = 0;
-	while (i++ < nb_strs)
-	{
-		ft_get_next_str(&next_str, &next_str_len, c);
-		tab[i] = malloc(sizeof(char) * (next_str_len + 1));
-		if (!(tab))
-			return (ft_malloc_error(tab));
-		ft_strlcpy(tab[i], next_str, next_str_len + 1);
-	}
-	tab[i] = NULL;
-	return (tab);
+	words = (char **) malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (words == 0)
+		return (0);
+	ft_split_behave(s, c, words);
+	return (words);
 }
