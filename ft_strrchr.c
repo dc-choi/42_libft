@@ -21,8 +21,7 @@ char	*ft_strrchr(const char *str, int i)
 	last = (char *)str;
 	find = (char)i;
 	idx = 0;
-	while (str[idx] != '\0')
-		idx++;
+	idx = ft_strlen(str);
 	while (idx > 0)
 	{
 		if (last[idx] == find)
