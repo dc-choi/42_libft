@@ -23,8 +23,8 @@ static int	ft_isspace(char c)
 
 int	ft_atoi(const char *str)
 {
-	long		nbr;
-	long		sign;
+	int			nbr;
+	int			sign;
 	size_t		idx;
 
 	nbr = 0;
