@@ -6,7 +6,7 @@
 /*   By: donchoi <donchoi.student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 11:52:45 by donchoi           #+#    #+#             */
-/*   Updated: 2021/11/23 12:10:19 by donchoi          ###   ########.fr       */
+/*   Updated: 2022/04/22 16:15:48 by donchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,9 @@ size_t	ft_strlcat(char *dest, const char *src, size_t n);
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+void	ft_calculate(long long nbr, char *base, int baselen);
+void	ft_putnbr_base(long long nbr, char *base);
+int		ft_base_strlen(int baselen, unsigned long long num, int t);
 
 #endif
