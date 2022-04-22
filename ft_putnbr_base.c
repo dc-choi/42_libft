@@ -6,9 +6,11 @@
 /*   By: donchoi <donchoi.student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 16:17:05 by donchoi           #+#    #+#             */
-/*   Updated: 2022/04/22 16:17:25 by donchoi          ###   ########.fr       */
+/*   Updated: 2022/04/22 16:43:38 by donchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_putnbr_base(long long nbr, char *base)
 {

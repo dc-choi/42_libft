@@ -6,9 +6,11 @@
 /*   By: donchoi <donchoi.student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 16:16:12 by donchoi           #+#    #+#             */
-/*   Updated: 2022/04/22 16:16:31 by donchoi          ###   ########.fr       */
+/*   Updated: 2022/04/22 16:43:27 by donchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_calculate(long long nbr, char *base, int baselen)
 {

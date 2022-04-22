@@ -6,9 +6,11 @@
 /*   By: donchoi <donchoi.student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 16:18:11 by donchoi           #+#    #+#             */
-/*   Updated: 2022/04/22 16:18:16 by donchoi          ###   ########.fr       */
+/*   Updated: 2022/04/22 16:44:02 by donchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_base_strlen(int baselen, unsigned long long num, int t)
 {
