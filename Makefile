@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: donchoi <donchoi@student.42seoul.kr>       +#+  +:+       +#+         #
+#    By: donchoi <donchoi.student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 15:22:07 by donchoi           #+#    #+#              #
-#    Updated: 2021/12/14 15:22:07 by donchoi          ###   ########.fr        #
+#    Updated: 2022/04/22 16:25:45 by donchoi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,6 +51,9 @@ FILES = ft_isalpha \
 		ft_putstr_fd \
 		ft_putendl_fd \
 		ft_putnbr_fd \
+		ft_calculate \
+		ft_putnbr_base \
+		ft_base_strlen \
 
 FILES_B = 	ft_lstnew \
 	  		ft_lstadd_front \
