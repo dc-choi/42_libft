@@ -51,9 +51,6 @@ FILES = ft_isalpha \
 		ft_putstr_fd \
 		ft_putendl_fd \
 		ft_putnbr_fd \
-		ft_calculate \
-		ft_putnbr_base \
-		ft_base_strlen \
 
 FILES_B = 	ft_lstnew \
 	  		ft_lstadd_front \
